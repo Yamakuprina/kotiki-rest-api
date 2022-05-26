@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat-friends</title>
+</head>
+<body>
+<h1>Cat-friends menu</h1>
+
+<form th:action="@{/friends/id/cat-friends}" method="get">
+    <div><label> Get Cat's friends by Cat-ID : <input type="text" name="catId"/> </label></div>
+    <div><input type="submit" value="Get"/></div>
+</form>
+
+<form th:action="@{/friends/id}" method="delete">
+    <div><label> Delete Cat-Friends Pair by ID : <input type="text" name="catFriendsPairId"/> </label></div>
+    <div><input type="submit" value="Delete"/></div>
+</form>
+
+<input type="button"  onclick="location.href='/'" value="Home page">
+
+</body>
+</html>

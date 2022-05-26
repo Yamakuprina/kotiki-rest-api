@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Spring Security Example</title>
+</head>
+<body>
+<h1>Home page</h1>
+<h2 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h2>
+
+<input type="button"  onclick="location.href='/cats/'" value="Cats Menu">
+<input type="button"  onclick="location.href='/friends/'" value="Cat-friends Menu">
+<input type="button" sec:authorize="hasAuthority('ADMIN')"  onclick="location.href='/owners/'" value="Owners Menu">
+<input type="button" sec:authorize="hasAuthority('ADMIN')"  onclick="location.href='/admin/'" value="Admin Menu">
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>

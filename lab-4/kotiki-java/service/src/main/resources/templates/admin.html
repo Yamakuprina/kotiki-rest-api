@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+<h1>Admin menu</h1>
+
+<input type="button"  onclick="location.href='/admin/users/all'" value="Get all users" >
+
+<form th:action="@{users/owner}" method="post">
+    Set Owner to User :
+    <div><label> User ID : <input type="text" name="userId"/> </label></div>
+    <div><label> Owner ID : <input type="text" name="ownerId"/> </label></div>
+    <div><input type="submit" value="Set"/></div>
+</form>
+
+<form th:action="@{users/delete}" method="delete">
+    <div><label> Delete user by ID : <input type="text" name="userId"/> </label></div>
+    <div><input type="submit" value="Delete"/></div>
+</form>
+
+<input type="button"  onclick="location.href='/'" value="Home page">
+
+</body>
+</html>
