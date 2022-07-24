@@ -16,7 +16,6 @@ public class Cat {
     @Column(name = "breed")
     private String breed;
     @Column(name = "color")
-    @Enumerated(EnumType.STRING)
     private CatColor color;
     @ManyToOne
     @JoinColumn(name = "owner_id")

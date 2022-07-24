@@ -36,10 +36,6 @@ public class CatDto {
         owner = cat.getOwner();
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public Owner getOwner() {
         return owner;
     }

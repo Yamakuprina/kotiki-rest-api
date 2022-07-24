@@ -1,7 +1,6 @@
 package ru.itmo.kotiki.service.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import ru.itmo.kotiki.dao.entity.Cat;
 import ru.itmo.kotiki.dao.entity.CatFriendsPair;

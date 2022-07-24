@@ -1,7 +1,6 @@
 package ru.itmo.kotiki.service.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 import ru.itmo.kotiki.dao.entity.Cat;
 import ru.itmo.kotiki.dao.entity.CatColor;
@@ -66,7 +65,15 @@ public class CatServiceImpl implements CatService {
 
     @Override
     public List<CatDto> getCatsWithCatColor(CatColor color) {
-        return catsToCatDtos(catRepository.findByColor(color));
+        List<Cat> allCats = catRepository.findAll();
+        List<CatDto> colorCats = new ArrayList<>();
+        for (Cat cat : allCats) {
+            if (cat.getColor().equals(color)) {
+                CatDto catDto = new CatDto(cat.getName(), cat.getBirthDate(), cat.getBreed(), cat.getColor());
+                colorCats.add(catDto);
+            }
+        }
+        return colorCats;
     }
 
     private List<CatDto> catsToCatDtos(List<Cat> cats) {
